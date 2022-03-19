@@ -6,8 +6,22 @@
 List* initList(void)
 {
 	List* pRoot = (List*)malloc(sizeof(*pRoot));
-	
-	return pRoot;
+	if (pRoot != NULL) {
+
+		pRoot->pNext = NULL;
+
+		pRoot->pPlateNum = NULL;
+		pRoot->entryTime = NULL;
+
+		std::cout << "Pomyslnie zainicjalizowano liste.\n";
+
+		return pRoot;
+	}
+	else {
+
+		std::cout << "Nie udalo sie zainicjalizowac listy.\n";
+		return nullptr;
+	}
 }
 
 void deinitList(List* pRoot)
